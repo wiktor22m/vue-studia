@@ -1,6 +1,6 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld/>
+  <HelloWorld @click="handleChangeText" :text="content" />
 </template>
 
 <script>
@@ -10,6 +10,16 @@ export default {
   name: 'App',
   components: {
     HelloWorld
+  },
+  data() {
+    return {
+      content: "WEB"
+    }
+  },
+  methods: {
+    handleChangeText() {
+      this.content = "strona"
+    }
   }
 }
 </script>

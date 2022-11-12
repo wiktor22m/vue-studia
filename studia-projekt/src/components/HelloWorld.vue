@@ -1,21 +1,24 @@
 <template>
   <div class="hello">
-    <h1 @click="handleChangeText">{{ name }}</h1>
+    <h1 >{{ contentHC }}</h1>
   </div>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      name: 'WEB'
-    }
+  name: "HelloWorld",
+  props: {
+    text: String
   },
-  methods: {
-    handleChangeText() {
-      this.name = "strona"
+  data() {
+    return { contentHC: this.text }
+  },
+  watch: {
+    text(nVal) {
+      return this.contentHC = nVal
     }
   }
+
 }
 </script>
 
