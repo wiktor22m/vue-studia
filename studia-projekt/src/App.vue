@@ -1,24 +1,28 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
   <HelloWorld @click="handleChangeText" :text="content" />
+  <WSB v-if="clicked"/>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
-
+import WSB from './components/WSB.vue'
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    WSB
   },
   data() {
     return {
-      content: "WEB"
+      content: "WEB",
+      clicked:false
     }
   },
   methods: {
     handleChangeText() {
-      this.content = "strona"
+      this.content = "strona",
+      this.clicked = true
     }
   }
 }
